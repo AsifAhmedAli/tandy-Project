@@ -11476,5 +11476,18 @@ footer {
     margin-left: 22px;
   }
 }
+.status-color div {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 34px !important;
+  height: 23px !important;
+  margin-left: 1px;
+}
+
+@media screen and (min-width: 996.67px) {
+  .filter-dropdown-menu {
+    width: 1124px;
+  }
+}
 
 /*# sourceMappingURL=bootstrap.css.map */
