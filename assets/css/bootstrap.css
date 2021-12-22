@@ -11489,5 +11489,9 @@ footer {
     width: 1124px;
   }
 }
+.drag-area {
+  padding: 4rem;
+  border: 1px dashed var(--bs-secondary);
+}
 
 /*# sourceMappingURL=bootstrap.css.map */

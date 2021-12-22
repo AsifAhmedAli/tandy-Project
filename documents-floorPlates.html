@@ -92,11 +92,17 @@
               </div>
             </div>
             <div class="col-6">
-              <button class="btn btn-primary d-block w-100">Add Now</button>
+              <button
+                class="btn btn-primary d-block w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#fileUpload"
+              >
+                Add Now
+              </button>
             </div>
           </div>
         </div>
-        <hr>
+        <hr />
         <div class="table-responsive">
           <table class="table">
             <thead class="text-uppercase">
@@ -147,6 +153,35 @@
     </main>
 
     <footer></footer>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="fileUpload"
+      tabindex="-1"
+      aria-labelledby="fileUploadLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form action="">
+              <div class="row g-4">
+                <div class="col-12">
+                  <div class="drag-area text-center">
+                    <img src="./assets/images/icons/dragdropimg.png" alt="" />
+                    <h5 class="fs-20 mt-4">Drag & Drop</h5>
+                    <p class="text-secondary">Uplaod file in PDF format</p>
+                    <button class="btn btn-primary px-4">Upload File</button>
+                    <input type="file" hidden />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
