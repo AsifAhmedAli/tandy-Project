@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Project - Financials</title>
+    <title>Project Overview</title>
 
     <link rel="stylesheet" href="./assets/css/bootstrap.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -14,6 +14,42 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Task", "Hours per Day"],
+          ["Sold", 1],
+          ["Available", 20],
+        ]);
+
+        var options = {
+          title: "",
+          sliceVisibilityThreshold: 0,
+          legend: {
+            position: "bottom",
+            labeledValueText: "both",
+            textStyle: { color: "black", fontSize: 15, fontName: "Poppins" },
+          },
+          slices: {
+            0: { color: "#008FFB" },
+            1: { color: "#FEB019" },
+          },
+        };
+
+        var chart = new google.visualization.PieChart(
+          document.getElementById("piechart")
+        );
+
+        chart.draw(data, options);
+      }
+    </script>
   </head>
   <body>
     <header>
@@ -207,84 +243,157 @@
             <span class="material-icons">arrow_back</span>
           </button>
         </div>
-        <a href="./projects.html" class="btn fs-18" id="back_to_page">
-          <span class="material-icons">arrow_back</span>
-          Back
-        </a>
         <ul class="list-unstyled mb-0 ps-0 sidebar-items">
-          <li>
-            <a href="" class="sidebar-item"> Project Details </a>
-          </li>
           <li class="active">
-            <a href="" class="sidebar-item"> Financials </a>
+            <a href="" class="sidebar-item">
+              <span class="material-icons">summarize</span>
+              Overview
+            </a>
+          </li>
+          <li>
+            <a href="" class="sidebar-item">
+              <span class="material-icons">widgets</span>
+              Matrix
+            </a>
+          </li>
+          <li>
+            <a href="" class="sidebar-item">
+              <span class="material-icons">holiday_village</span>
+              Properties
+            </a>
+          </li>
+          <li class="">
+            <div class="dropdown">
+              <button class="sidebar-item">
+                <span class="material-icons">description</span>
+                Documents
+              </button>
+              <ul class="list-unstyled ps-0 mb-0 sidebar-dropdown-list">
+                <li class="">
+                  <a href="">Floor Plans</a>
+                </li>
+                <li>
+                  <a href="">Brochure</a>
+                </li>
+                <li>
+                  <a href="">FloorPlates</a>
+                </li>
+                <li>
+                  <a href="">Images</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="" class="sidebar-item">
+              <span class="material-icons">video_library</span>
+              Videos
+            </a>
+          </li>
+          <li>
+            <a href="" class="sidebar-item">
+              <span class="material-icons">place</span>
+              Map
+            </a>
           </li>
         </ul>
       </aside>
       <div class="content">
-        <h1 class="mainUserText">New Project</h1>
-        <hr />
-        <h5 class="fs-28 fw-normal my-4">Agent Commissions</h5>
-        <form action="">
-          <div class="row g-4">
-            <div class="col-md-6">
-              <label for="" class="form-label2"
-                >Retail Sales Commission %</label
-              >
-              <select name="" id="" class="form-select form-select2">
-                <option value=""></option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="" class="form-label2"
-                >Developer Sales Commission %</label
-              >
-              <input type="text" class="form-control form-control2" />
-            </div>
-            <div class="col-md-6">
-              <label for="" class="form-label2"
-                >Partner Sales Commission %</label
-              >
-              <input type="text" class="form-control form-control2" />
-            </div>
-            <div class="col-md-6">
-              <label for="" class="form-label2">Offshore Commission %</label>
-              <input type="text" class="form-control form-control2" />
-            </div>
-          </div>
+        <h1 class="mainUserText">George Street</h1>
+        <p class="fs-20 mb-3">363 George Street, Fitzroy VIC</p>
 
-          <h5 class="fs-28 fw-normal mt-5 mb-4">Other Commission</h5>
-          <div class="row g-4">
-            <div class="col-md-6">
-              <label for="" class="form-label2">Offshore Commission %</label>
-              <input type="text" class="form-control form-control2" />
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="./assets/images/pictures/carousel-img.png"
+                class="d-block w-100"
+                alt=""
+              />
             </div>
-            <div class="col-md-6">
-              <label for="" class="form-label2"
-                >Developer Sales Commission %</label
-              >
-              <input type="text" class="form-control form-control2" />
+            <div class="carousel-item">
+              <img
+                src="./assets/images/pictures/carousel-img.png"
+                class="d-block w-100"
+                alt=""
+              />
             </div>
-            <div class="col-md-6">
-              <label for="" class="form-label2"
-                >Partner Sales Commission %</label
-              >
-              <input type="text" class="form-control form-control2" />
+            <div class="carousel-item">
+              <img
+                src="./assets/images/pictures/carousel-img.png"
+                class="d-block w-100"
+                alt=""
+              />
             </div>
           </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
 
-          <h5 class="fs-28 fw-normal mt-5 mb-4">Currency</h5>
-          <div class="row g-4">
-            <div class="col-md-6">
-              <label for="" class="form-label2">Currency</label>
-              <select name="" id="" class="form-select form-select2">
-                <option value=""></option>
-              </select>
-            </div>
-            <div class="col-12 text-end">
-              <button class="btn btn-primary btn-lg px-5 py-2">Save</button>
+        <h5 class="fs-28 fw-normal mt-4 mb-3">Overview</h5>
+        <div class="row align-items-stretch g-3">
+          <div class="col-md-10">
+            <div class="border border-1 py-4 px-5 h-100">
+              <h6 class="fs-18 fw-semibold">Apartments</h6>
+              <div
+                class="d-flex align-items-center justify-content-center h-100"
+              >
+                <div id="piechart" style="width: 900px; height: 480px"></div>
+              </div>
             </div>
           </div>
-        </form>
+          <div class="col-md-2">
+            <div class="row g-3">
+              <div class="col-12">
+                <div
+                  class="rounded border border-1 px-4 py-5"
+                  style="background-color: white"
+                >
+                  <h2 class="fs-1">87</h2>
+                  <p class="mb-0 fs-18">Total Apartments</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div
+                  class="rounded border border-1 px-4 py-5"
+                  style="background-color: #FAFC9A"
+                >
+                  <h2 class="fs-1">20</h2>
+                  <p class="mb-0 fs-18">Available Apartments</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div
+                  class="rounded border border-1 px-4 py-5"
+                  style="background-color: #a4bedb"
+                >
+                  <h2 class="fs-1">1</h2>
+                  <p class="mb-0 fs-18">Sold</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 

@@ -1,6 +1,14 @@
 $(document).ready(function () {
-  $("header").load("./assets/components/header.html");
+  // $("header").load("./assets/components/header.html");
   $("footer").load("./assets/components/footer.html");
+});
+
+$("#show-sidebar-btn").on("click", function () {
+  $("aside").show();
+});
+
+$("#hide-sidebar-btn").on("click", function () {
+  $("aside").hide();
 });
 
 //selecting all required elements

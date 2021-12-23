@@ -11169,7 +11169,15 @@ header .notifications-container .dropdown-item > .notification p.summary {
 }
 header .main-nav > ul > li {
   display: inline-block;
-  padding: 0 22px;
+  padding: 7px 22px;
+  border-radius: 0.3125rem;
+}
+header .main-nav > ul > li.active {
+  background-color: #FF676E;
+}
+header .main-nav > ul > li.active > a .navbar-label,
+header .main-nav > ul > li.active > a .navbar-icon {
+  color: #fff;
 }
 header .main-nav > ul > li > a:not(.btn) {
   font-size: 1.125rem;
@@ -11217,6 +11225,15 @@ aside::before {
   border-right: 2px solid rgba(169, 169, 169, 0.3);
   width: 2px;
 }
+aside #back_to_page {
+  position: relative;
+  top: -86px;
+}
+@media screen and (max-width: 1200px) {
+  aside #back_to_page {
+    top: 0;
+  }
+}
 aside .sidebar-cta {
   font-size: 25px;
   margin-bottom: 1.75rem;
@@ -11227,6 +11244,7 @@ aside .sidebar-items > li {
 }
 aside .sidebar-items > li .sidebar-item {
   padding: 0.5rem 1.5rem;
+  display: block;
   text-align: left;
   border: none;
   border-radius: 5px;
@@ -11278,6 +11296,11 @@ aside .sidebar-items > li > .dropdown > .sidebar-dropdown-list > li::before {
 aside .sidebar-items > li > .dropdown > .sidebar-dropdown-list > li.active::before {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='currentColor' class='bi bi-circle-fill' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8'/%3E%3C/svg%3E") no-repeat left 45% top 45%;
 }
+@media screen and (max-width: 1200px) {
+  aside .sidebar-items > li > .dropdown > .sidebar-dropdown-list > li.active::before {
+    background-position: left 45% top 44%;
+  }
+}
 aside .sidebar-items > li > .dropdown.active .sidebar-dropdown-list {
   display: block;
 }
@@ -11287,6 +11310,12 @@ aside .sidebar-items > li > .dropdown.active .sidebar-dropdown-list {
   font-weight: 600;
 }
 
+@media screen and (max-width: 768px) {
+  .mainUserText {
+    font-size: 28px;
+    margin-bottom: 0.75rem;
+  }
+}
 .material-icons {
   position: relative;
   top: 0.125em;
@@ -11430,13 +11459,18 @@ footer {
   width: 75%;
   margin: auto;
 }
-.matrix-table .table tr td * {
-  font-weight: 500;
-}
-.matrix-table .table tr td .item-heading {
-  font-size: 15px;
-  color: #9D9998;
-  margin-bottom: 4px;
+@media screen and (max-width: 996.67px) {
+  .matrix-table .table {
+    width: 100%;
+  }
+  .matrix-table tr td * {
+    font-weight: 500;
+  }
+  .matrix-table tr td .item-heading {
+    font-size: 15px;
+    color: #9D9998;
+    margin-bottom: 4px;
+  }
 }
 
 .additional-info-table tr td .item-heading {
@@ -11492,6 +11526,18 @@ footer {
 .drag-area {
   padding: 4rem;
   border: 1px dashed var(--bs-secondary);
+}
+
+@media screen and (max-width: 996.67px) {
+  .form-check label {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+@media screen and (max-width: 567px) {
+  .form-check label {
+    font-size: 12px;
+  }
 }
 
 /*# sourceMappingURL=bootstrap.css.map */

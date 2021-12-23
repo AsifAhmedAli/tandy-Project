@@ -55,7 +55,7 @@
         var options = {
           fontName: "Poppins",
           title: "",
-          width: 900,
+          width: 576,
           height: 480,
           bar: { groupWidth: "85%" },
           legend: {
@@ -82,35 +82,155 @@
   </head>
   <body>
     <header>
+      <a href="./index.html" class="brand-icon">
+        <img src="../assets/images/logo.svg" alt="" />
+      </a>
       <div class="d-flex justify-content-between align-items-center">
-        <img
-          src="./assets/images/logo.png"
-          width="220px"
-          class="img-fluid"
-          alt=""
-        />
+        <div class="toggle-menu">
+          <button class="btn fs-28 p-0" id="show-sidebar-btn">
+            <span class="material-icons">menu</span>
+          </button>
+          <a href="./index.html" class="toggle-brand-icon">
+            <img
+              src="./assets/images/logo.svg"
+              width="220px"
+              class="img-fluid"
+              alt=""
+            />
+          </a>
+        </div>
         <nav class="main-nav">
           <ul class="ps-0 mb-0 list-unstyled">
             <li>
-              <a href="" class="btn btn-primary">Dashboard</a>
+              <a href="">
+                <span class="material-icons navbar-icon">people_alt</span>
+                <span class="navbar-label">Agents</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="">
+                <span class="material-icons navbar-icon">dashboard</span>
+                <span class="navbar-label">Dashboard</span>
+              </a>
+            </li>
+            <li class="">
+              <a href="">
+                <span class="material-icons navbar-icon">work</span>
+                <span class="navbar-label">Projects</span></a
+              >
             </li>
             <li>
-              <a href="">Projects</a>
-            </li>
-            <li>
-              <div class="dropdown">
+              <div class="btn-group">
                 <button
                   class="btn fs-25 p-0 text-secondary"
                   type="button"
-                  id="dropdownMenuButton1"
+                  id="manualClose"
                   data-bs-toggle="dropdown"
+                  data-bs-auto-close="false"
                   aria-expanded="false"
                 >
                   <span class="material-icons">notifications</span>
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                </ul>
+                <div
+                  class="dropdown-menu notifications-container"
+                  aria-labelledby="manualClose"
+                >
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <p class="mb-0 fs-15">Notifications</p>
+                    <button class="btn text-info fs-10">
+                      Mark all as read
+                    </button>
+                  </div>
+                  <hr />
+                  <ul class="list-unstyled">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <div class="notification">
+                          <img
+                            src="./assets/images/icons/user-icon.png"
+                            width="44"
+                            height="44"
+                            alt=""
+                          />
+                          <div class="flex-fill mx-3">
+                            <p class="title">George Street</p>
+                            <p class="summary">
+                              <strong>John Doe</strong> changed the status of
+                              <strong>G1</strong> to <strong>Available</strong>
+                            </p>
+                            <p class="time">10 min ago</p>
+                          </div>
+                          <img
+                            src="./assets/images/icons/building.png"
+                            width="49"
+                            height="47"
+                            alt=""
+                          />
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <div class="notification">
+                          <img
+                            src="./assets/images/icons/user-icon.png"
+                            width="44"
+                            height="44"
+                            alt=""
+                          />
+                          <div class="flex-fill mx-3">
+                            <p class="title">George Street</p>
+                            <p class="summary">
+                              <strong>John Doe</strong> changed the status of
+                              <strong>G1</strong> to <strong>Available</strong>
+                            </p>
+                            <p class="time">10 min ago</p>
+                          </div>
+                          <img
+                            src="./assets/images/icons/building.png"
+                            width="49"
+                            height="47"
+                            alt=""
+                          />
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <div class="notification">
+                          <img
+                            src="./assets/images/icons/user-icon.png"
+                            width="44"
+                            height="44"
+                            alt=""
+                          />
+                          <div class="flex-fill mx-3">
+                            <p class="title">George Street</p>
+                            <p class="summary">
+                              <strong>John Doe</strong> changed the status of
+                              <strong>G1</strong> to <strong>Available</strong>
+                            </p>
+                            <p class="time">10 min ago</p>
+                          </div>
+                          <img
+                            src="./assets/images/icons/building.png"
+                            width="49"
+                            height="47"
+                            alt=""
+                          />
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </li>
             <li>
@@ -152,20 +272,22 @@
             <span class="material-icons">arrow_back</span>
           </button>
         </div>
+        <a href="./dashboard-1.html" class="btn fs-18" id="back_to_page">
+          <span class="material-icons">arrow_back</span>
+          Back
+        </a>
         <ul class="list-unstyled mb-0 ps-0 sidebar-items">
           <li class="active">
-            <div class="dropdown active">
+            <div class="dropdown">
               <button class="sidebar-item">
-                <span class="material-icons material-icons-outlined"
-                  >dashboard</span
-                >
+                <span class="material-icons">dashboard</span>
                 Dashboard
               </button>
               <ul class="list-unstyled ps-0 mb-0 sidebar-dropdown-list">
-                <li class="active">
+                <li>
                   <a href="">Overview</a>
                 </li>
-                <li>
+                <li class="active">
                   <a href="">Post Engagement</a>
                 </li>
               </ul>
@@ -201,7 +323,7 @@
               >
                 <div
                   id="columnchart_values"
-                  style="width: 900px; height: 480px"
+                  style="width: 576px; height: 480px"
                 ></div>
               </div>
             </div>
